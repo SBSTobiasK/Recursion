@@ -2,7 +2,7 @@ count=0
 def move_disk(x):
     global count
     count +=1
-    print(x+1)
+    print(x)
 
 
 def solve_toh(n_disks):
@@ -12,5 +12,5 @@ def solve_toh(n_disks):
     move_disk(n_disks-1)
     solve_toh(n_disks-1)
 
-solve_toh(1)
-print(count)
+solve_toh(5)
+print("\t", count)

@@ -2,8 +2,8 @@ import numpy as np
 import random
 
 grid0 = [[0 for _ in range(9)] for _ in range(9)]
-
-given = 15
+counter = 0
+given = 25
 def possible(y,x,n):
     global grid0
     for i in range(0,9):
@@ -22,21 +22,29 @@ def possible(y,x,n):
 def fillgrid(given):
     global grid0
     if given < 1:
-        return grid0
+        pass
     else:
         while True:
             y = random.randint(0, 8)
             x = random.randint(0, 8)
             n = random.randint(1, 9)
-            if grid0[y][x] == 0:
+            if grid0[y][x] == 0 and possible(y,x,n):
                 break
-        if possible(y,x,n):
-            grid0[y][x] = n
-            fillgrid(given-1)
-        else:
-            fillgrid(given)
+        grid0[y][x] = n
+        fillgrid(given-1)
 
-(fillgrid(given))
+
+fillgrid(given)
 print(np.matrix(grid0))
 print(grid0)
+
+#for j in range(len(grid0)):
+#    for k in range(len(grid0[j])):
+#        if grid0[j][k] != 0:
+#            counter += 1
+#print(counter)
+
+
+
+
 

@@ -1,5 +1,6 @@
 import numpy as np
 
+count = 0
 grid1 = [[5,3,0,0,7,0,0,0,0],
         [6,0,0,1,9,5,0,0,0],
         [0,9,8,0,0,0,0,6,0],
@@ -29,7 +30,7 @@ def possible(y,x,n):
                 return False
     return True
 def solve():
-    global grid
+    global grid, count
     for y in range(9):
         for x in range(9):
             if grid[y][x] == 0:
@@ -41,5 +42,6 @@ def solve():
                 return
     print(np.matrix(grid))
     input("More?")
-
+    count += 1
+    print(count)
 solve()
